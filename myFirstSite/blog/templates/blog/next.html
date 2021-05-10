@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MIM</title>
+    </head>
+    <body>
+        <div>
+            <br/>
+            <h1><a>기억속의 영화를 검색하세요</a></h1>
+        </div>
+
+        <div>
+            <form name="loginform" action="next.html" method="get">
+                입력 : <input type="text" name="inputForm" size="25">
+                    <input type="submit" value="검색">
+                    <input type="submit" formaction = "main.html"  value="메인으로">
+            </form><br/><br/>
+            {% for movie in movies %}
+            <img src="{{ movie.movieImg }}" height=500 width=350><br/>
+            <a>제목 : {{ movie.title }}</a><br/>
+            <a>출연 : {{ movie.cast }}</a><br/>
+            <a href="{{ movie.movieUrl }}">네이버 영화 링크</a><br/><br/>
+            {% endfor %}
+        </div>
+    </body>
+</html>
